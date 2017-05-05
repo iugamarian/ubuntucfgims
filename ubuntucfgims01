@@ -35,7 +35,7 @@ sysctl --system
 # Show the sysctl configurations to see if they look well
 sysctl -a | grep disable | grep ipv6
 apt-get update && apt-get upgrade -y
-apt-get install -y mc ncdu file-roller unar mesa-vdpau-drivers mesa-va-drivers mpv git vdpauinfo vainfo mediainfo-gui mc ncdu iotop youtube-dl smartmontools opensssh-server fluid-soundfont-gm fluid-soundfont-gs audacious gcc-avr avrdude avr-libc usb-creator-gtk dpkg-dev wine-development winetricks
+apt-get install -y mc ncdu file-roller unar mesa-vdpau-drivers mesa-va-drivers mpv git vdpauinfo vainfo mediainfo-gui mc ncdu iotop youtube-dl smartmontools openssh-server fluid-soundfont-gm fluid-soundfont-gs audacious gcc-avr avrdude avr-libc usb-creator-gtk dpkg-dev wine-development winetricks
 cat <<EOF >> /etc/bash.bashrc
 alias ydmax='youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4'
 alias ydmed='youtube-dl -f mp4/best'
