@@ -9,6 +9,7 @@ dpkg-divert --local --divert /etc/grub.d/09_os-prober --rename --add /etc/grub.d
 update-grub
 #dpkg-divert --rename --remove /etc/grub.d/30_os-prober
 #update-grub
+mv ubuntucfgims02 ubuntucfgims02-done
 sync
 sleep 5
 reboot
