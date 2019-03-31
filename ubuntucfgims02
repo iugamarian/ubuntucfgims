@@ -1,0 +1,14 @@
+#!/bin/bash
+apt purge -y unattended-upgrades
+rm -rf /var/log/unattended-upgrades
+apt-get update && apt-get upgrade -y
+# Not using unar instead of unrar
+apt-get install -y mc ncdu file-roller unrar mesa-vdpau-drivers mesa-va-drivers mpv git vdpauinfo vainfo mediainfo-gui mc ncdu iotop youtube-dl smartmontools openssh-server fluid-soundfont-gm fluid-soundfont-gs audacious gcc-avr avrdude avr-libc usb-creator-gtk dpkg-dev wine-stable winetricks
+WINEARCH=win32 wineboot
+dpkg-divert --local --divert /etc/grub.d/09_os-prober --rename --add /etc/grub.d/30_os-prober
+update-grub
+#dpkg-divert --rename --remove /etc/grub.d/30_os-prober
+#update-grub
+sync
+sleep 5
+reboot
