@@ -15,10 +15,12 @@ else
     echo "Root."
 	echo ""
 fi
+# Get all current data to disk right now (avoid lock after sysctl --system)
+sync
 # Kernel - save data to disk after getting 8 seconds old with 16MB buffer
 cat <<EOF > /etc/sysctl.d/30-pc-optimizations.conf
 vm.swappiness = 1
-vm.min_free_kbytes = 32768
+vm.min_free_kbytes = 65536
 vm.vfs_cache_pressure = 300
 vm.dirty_bytes = 16777216
 vm.dirty_background_bytes = 16777216
