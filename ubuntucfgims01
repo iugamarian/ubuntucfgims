@@ -32,8 +32,8 @@ cat <<EOF > /etc/sysctl.d/99-pc-disable-ipv6.conf
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 EOF
-# Load all sysctl configuration files manually
-sysctl --system
+# Load all sysctl configuration files manually, not required because we restart
+#sysctl --system
 # Show the sysctl configurations to see if they look well
 sysctl -a | grep disable | grep ipv6
 # Disable blocking automatic updates
